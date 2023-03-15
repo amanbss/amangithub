@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+    <style>
+        body{
+            background-color: orangered;
+
+        }
+        .a{
+            height:600px;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            
+        }
+        #submit{
+            height: 35px;
+            width: 250px;
+            background-color: orangered;
+            cursor: pointer;
+            color: white;
+            border: 2px solid white;
+            font-size: 20px;
+        }
+        input{
+            height: 20px;
+            width: 100px;
+            padding: 5px;
+            text-align: center;
+        }
+        p{
+            color: red;
+            padding: 5px ;
+            border: 2px solid white;
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+    <section class="a">
+        <h1>Log in </h1>
+        <form action="/index1.html" onsubmit="return myfun()" style="background-color: white;padding: 50px;">
+            <label for="">Username</label>
+            <input type="text" placeholder="enter your name" id="input1"> <br>
+            <p id="p1"></p>
+            <label for="">Password</label>
+            <input type="password" placeholder="enter your password" id="input2"> <br>
+            <p id="p2"></p> 
+            <input id="submit" type="submit" value="submit" >
+
+        </form>
+
+    </section>
+    <script>
+        function myfun(){
+            var a=document.getElementById("input1");
+            var b=document.getElementById("input2");
+            var c=1;
+            if(a.value.length==" " || a.value.length==null){
+                document.getElementById("p1").innerHTML="please enter username";
+                document.getElementById("p1").style=" background-color: white;";
+                c=0;
+                
+
+            }
+            else if(a.value.length<3){
+                document.getElementById("p1").innerHTML="Minimum three character required";
+                document.getElementById("p1").style=" background-color: white;";
+                c=0;
+                
+
+            }else{
+                document.getElementById("p1").innerHTML=" ";
+                
+                c=1;
+                
+            }
+            if(b.value.length==" " || b.value.length==null){
+                document.getElementById("p2").innerHTML="please enter password";
+                document.getElementById("p2").style=" background-color: white;";
+                c=0;
+                
+
+            }
+            else if(b.value.length<4){
+                document.getElementById("p2").innerHTML="Minimum four character required";
+                document.getElementById("p2").style=" background-color: white;";
+                c=0;
+                
+
+            }else{
+                document.getElementById("p2").innerHTML=" ";
+                c=1;
+                
+            }
+            if(c){
+                return true
+                
+
+
+
+
+            }else{
+                return false
+
+            }
+            
+
+        }
+    </script>
+    
+
+</body>
+</html>
